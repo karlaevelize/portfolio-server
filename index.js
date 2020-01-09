@@ -9,6 +9,8 @@ const Message = require("./messages/model");
 const badFactRouter = require("./bad-fact/router");
 const goodFactRouter = require("./good-fact/router");
 const whyFactRouter = require("./why-fact/router");
+const userRouter = require("./user/router");
+const authRouter = require("./auth/router");
 const messageRouterFactory = require("./messages/router");
 
 const port = process.env.PORT || 4000;
@@ -25,6 +27,8 @@ app.use(badFactRouter);
 app.use(goodFactRouter);
 app.use(whyFactRouter);
 app.use(messageRouter);
+app.use(userRouter);
+app.use(authRouter);
 
 app.get("/", (request, response) => {
   response.send("hello");
